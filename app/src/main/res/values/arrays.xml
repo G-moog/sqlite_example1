@@ -1,0 +1,14 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="array_voice">
+        <item>라이트 모드</item>
+        <item>다크 모드</item>
+    </string-array>
+
+<!--    <string-array name="reply_values">-->
+<!--        <item>라이트 모드</item>-->
+<!--        <item>다크 모드</item>-->
+<!--        <item>reply</item>-->
+<!--        <item>reply_all</item>-->
+<!--    </string-array>-->
+</resources>

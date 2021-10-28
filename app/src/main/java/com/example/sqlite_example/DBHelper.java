@@ -1,5 +1,6 @@
 package com.example.sqlite_example;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -71,23 +72,31 @@ public class DBHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getWritableDatabase();
 
-        db.execSQL("INSERT INTO MemoList (title, content,writtenDate) VALUE('" + title + "','" + content + "','" + writtenDate + "');");
-//                  INSERT INTO MemoList (title, content,writtenDate) VALUE('" + title + "','" + content + "','" + writtenDate + "');    ----------> SQL 쿼리문
-
+        ContentValues cv = new ContentValues();
+        cv.put("title", title);
+        cv.put("content", content);
+        cv.put("writtenDate", writtenDate);
+        db.insert("MemoList", null, cv);
     }
 
 //    UPDATE문(저장된 메모를 수정.)
-    public void UpdateMemo(String title, String content, String writtenDate, String beforeDate){
+    public void UpdateMemo(String title, String content, String writtenDate, int id){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE MemoList SET title = '" + title + "', '" + content + "', '" + writtenDate + "' WHERE writtenDate = '" + beforeDate + "' ");
+        ContentValues cv = new ContentValues();
+        cv.put("title", title);
+        cv.put("content", content);
+        cv.put("writtenDate", writtenDate);
+        db.update("MemoList", cv,"id = "+ id, null);
+
+        db.close();
     }
 
 
 
 
 //    DELETE문(저장된 메모를 삭제.)
-    public void DeleteMemo(String beforeDate){
+    public void DeleteMemo(int id){
     SQLiteDatabase db = getWritableDatabase();
-    db.execSQL("DELETE FROM MemoList WHERE writtenDate = '" + beforeDate + "'");
+    db.execSQL("DELETE FROM MemoList WHERE id = '" + id + "'");
 }
 }

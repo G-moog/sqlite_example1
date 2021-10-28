@@ -33,6 +33,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
 
 
+
+
+
     @NonNull
     @Override
     public CustomAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -90,6 +93,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                             EditText et_title = dialog.findViewById(R.id.et_title);
                             EditText et_content = dialog.findViewById(R.id.et_content);
                             Button btn_ok = dialog.findViewById(R.id.btn_ok);
+
+                            et_title.setText(memoItem.getTitle());
+                            et_content.setText(memoItem.getContent());
+                            //불러왔을때 커서를 뒤쪽으로 자동 위치되게
+                            et_title.setSelection(et_title.getText().length() );
+
+
+
                             btn_ok.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -99,10 +110,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                                     String title = et_title.getText().toString();
                                     String content = et_content.getText().toString();
                                     String currentTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format((new Date()));        //현재시간 연월일시분초 받아오기
-                                    String beforeDate = memoItem.getWrittenDate();
+                                    int id = memoItem.getId();
 
 
-                                    mDBHelper.UpdateMemo(et_title.getText().toString(), et_content.getText().toString(), currentTime, beforeDate);
+                                    mDBHelper.UpdateMemo(title, content,currentTime,id);
+
+//                                    ((MainActivity)v.getContext()).startWritingPage(getAdapterPosition(),memoItem.getTitle(),memoItem.getContent());
+
+
+
 
 
                                     //update UI
@@ -121,10 +137,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                         else if(position == 1){
                             //delete table
                             String beforeTime = memoItem.getWrittenDate();
-                            mDBHelper.DeleteMemo(beforeTime);
+                            int id = memoItem.getId();
+                            mDBHelper.DeleteMemo(id);
                             //delete UI
                             mMemoList.remove(curPos);
-                            notifyItemChanged(curPos);
+                            notifyDataSetChanged();
+//                            notifyItemChanged(curPos+1);
                             Toast.makeText(mContext, "목록이 제거되었습니다.", Toast.LENGTH_SHORT).show();
 
 

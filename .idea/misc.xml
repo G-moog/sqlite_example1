@@ -4,9 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/activity_main2.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/activity_setting.xml" value="0.1" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/activity_writing_page.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/dialog_edit.xml" value="0.33" />
         <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/memo_item.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/memo_list.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/setting.xml" value="0.1" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/setting1.xml" value="0.21875" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/layout/settings_activity.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/xml/preferences.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/xml/preferencess.xml" value="0.25" />
+        <entry key="..\:/Users/kingm/AndroidStudioProjects/sqlite_example/app/src/main/res/xml/root_preferences.xml" value="0.38645833333333335" />
       </map>
     </option>
   </component>
